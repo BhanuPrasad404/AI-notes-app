@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Toast from '@/components/Toast';
 import { api } from '@/lib/api';
+export const dynamic = 'force-dynamic';
+
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState('');
@@ -13,6 +15,7 @@ export default function ResetPasswordPage() {
   const router = useRouter();
   const params = useSearchParams();
   const token = params.get('token');
+
 
   useEffect(() => {
     if (!token) setError('Invalid or expired link.');
