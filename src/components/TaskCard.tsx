@@ -104,7 +104,7 @@ export default function TaskCard({ task, onUpdate, hasNewMessages = false }: Tas
     };
 
     const currentStatus = STATUS_CONFIG[task.status];
-    const currentUrgency = URGENCY_CONFIG[task?.urgency];
+    const currentUrgency = URGENCY_CONFIG[task?.urgency as keyof typeof URGENCY_CONFIG || 'MEDIUM'];
 
     return (
         <div
