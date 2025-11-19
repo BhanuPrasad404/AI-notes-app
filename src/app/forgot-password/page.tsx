@@ -11,22 +11,31 @@ export default function ForgotPasswordPage() {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    setSuccess('');
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError('');
+  setSuccess('');
 
-    try {
-      const res = await api.forgotPassword(email); // send API call
-      if (res.error) setError(res.error);
-      else setSuccess('Password reset link sent to your email.');
-    } catch {
-      setError('Failed to send reset link. Try again.');
-    } finally {
-      setLoading(false);
+  try {
+    console.log('🔄 Sending request for email:', email); // ADD THIS
+    const res = await api.forgotPassword(email);
+    console.log('📦 API Response:', res); // ADD THIS
+    
+    if (res.error) {
+      console.log('❌ Setting error:', res.error);
+      setError(res.error);
+    } else {
+      console.log('✅ Setting success');
+      setSuccess('Password reset link sent to your email.');
     }
-  };
+  } catch (error) {
+    console.log('💥 Catch error:', error);
+    setError('Failed to send reset link. Try again.');
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
