@@ -14,7 +14,6 @@ const PRE_DEFINED_QUESTIONS = [
     "How can I improve my productivity?",
     "How does this help team collaboration?",
     "What are the main AI utilities?",
-    "How do I organize my notes effectively?",
     "Can I attach files to notes and tasks?"
 ];
 

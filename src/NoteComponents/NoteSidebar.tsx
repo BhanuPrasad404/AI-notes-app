@@ -27,7 +27,7 @@ export default function NoteSidebar({ note }: NoteSidebarProps) {
         <div className="space-y-5">
             {/* AI Summary */}
             {note.aiSummary && (
-                <div className="relative overflow-hidden rounded-2xl border border-gray-200/80 dark:border-gray-700/50 bg-white/90 dark:bg-gradient-to-br dark:from-gray-900 dark:to-blue-950/60 backdrop-blur-xl shadow-2xl shadow-blue-500/10 dark:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/10 hover:border-blue-200/50 dark:hover:border-blue-500/30">
+                <div className="relative overflow-hidden rounded-2xl border border-gray-200/80 dark:border-gray-700/50 bg-white/90 dark:bg-gradient-to-br dark:from-gray-900 dark:to-black backdrop-blur-xl shadow-2xl shadow-blue-500/10 dark:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/10 hover:border-blue-200/50 dark:hover:border-blue-500/30">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 dark:from-cyan-500/10 via-transparent to-transparent pointer-events-none"></div>
                     <div className="p-4 relative z-10">
                         <div className="flex items-center mb-3 space-x-2">

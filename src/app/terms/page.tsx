@@ -240,7 +240,7 @@ export default function TermsOfService() {
                 <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-xl">
                   <Terminal className="w-8 h-8 text-white mb-3 mx-auto" />
                   <h3 className="font-semibold text-white mb-2">Legal Inquiries</h3>
-                  <p className="text-purple-100 text-sm">bhanuprasadgummidelli@gmail.com</p>
+                  <p className="text-purple-100 text-sm">intellispace@gmail.com</p>
                 </div>
               </div>
             </section>

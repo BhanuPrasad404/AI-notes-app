@@ -203,7 +203,7 @@ export default function PrivacyPolicy() {
                     Questions about your privacy?
                 </p>
                 <div className="bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-xl p-6 max-w-md mx-auto">
-                    <p className="text-blue-700 dark:text-blue-400 font-semibold">gumidellibhanuprassad5648@gmail.com</p>
+                    <p className="text-blue-700 dark:text-blue-400 font-semibold">intellispace@gmail.com</p>
                     <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">We're here to help</p>
                 </div>
             </section>
