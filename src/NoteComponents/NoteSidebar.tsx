@@ -27,7 +27,7 @@ export default function NoteSidebar({ note }: NoteSidebarProps) {
         <div className="space-y-5">
             {/* AI Summary */}
             {note.aiSummary && (
-                <div className="relative overflow-hidden rounded-2xl border border-gray-200/80 dark:border-gray-700/50 bg-white/90 dark:bg-gradient-to-br dark:from-gray-900 dark:to-black backdrop-blur-xl shadow-2xl shadow-blue-500/10 dark:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/10 hover:border-blue-200/50 dark:hover:border-blue-500/30">
+                <div className="relative overflow-hidden rounded-2xl border border-gray-200/80 dark:border-blue-700/50 bg-white/90 dark:bg-gradient-to-br dark:from-gray-900 dark:to-black backdrop-blur-xl shadow-2xl shadow-blue-500/10 dark:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/10 hover:border-blue-200/50 dark:hover:border-blue-500/30">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 dark:from-cyan-500/10 via-transparent to-transparent pointer-events-none"></div>
                     <div className="p-4 relative z-10">
                         <div className="flex items-center mb-3 space-x-2">
@@ -45,7 +45,7 @@ export default function NoteSidebar({ note }: NoteSidebarProps) {
 
             {/* AI Tags */}
             {note.aiTags && note.aiTags.length > 0 && (
-                <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-800/60 backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl p-4">
+                <div className="rounded-xl border border-gray-900 dark:border-blue-800 bg-white dark:bg-black backdrop-blur-md shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl p-4">
                     <div className="flex items-center mb-3">
                         <h3 className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-500">
                             Tags
@@ -68,7 +68,7 @@ export default function NoteSidebar({ note }: NoteSidebarProps) {
             )}
 
             {/* Note Info */}
-            <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-800/60 backdrop-blur-md shadow-lg p-4 transition-transform hover:-translate-y-0.5 hover:shadow-xl">
+            <div className="rounded-xl border border-gray-200 dark:border-blue-900 bg-white dark:bg-black backdrop-blur-md shadow-lg p-4 transition-transform hover:-translate-y-0.5 hover:shadow-xl">
                 <h3 className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 dark:from-pink-400 dark:to-rose-500 mb-3">
                     Note Info
                 </h3>
