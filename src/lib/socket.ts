@@ -4,12 +4,17 @@ import { auth } from './auth';
 
 class SocketService {
   private socket: Socket | null = null;
-  
+
   connect() {
     const token = auth.getToken();
     if (!token) return;
 
-    this.socket = io('http://localhost:5000', {
+    const isProduction = window.location.hostname !== 'localhost';
+    const SOCKET_URL = isProduction
+      ? 'https://ai-notes-backend-h185.onrender.com'
+      : 'http://localhost:5000';
+
+    this.socket = io(SOCKET_URL, {
       auth: { token },
       transports: ['websocket']
     });
