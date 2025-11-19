@@ -12,11 +12,11 @@ import UserDropdown from '@/NoteComponents/UserDropdown';
 import { logger } from '@/lib/logger';
 import ProfileSettingsModal from '@/components/ProfileSettingsModal';
 
-
 // Import the 3 split components
 import DashboardSkeleton from './DashboardSkeleton';
 import { Icons, NavigationItem, CollaboratorAvatar, StatCard, NoteCard, TaskColumn } from './DashboardComponents';
 import Link from 'next/link';
+
 export default function Dashboard() {
     const [notes, setNotes] = useState<Note[]>([]);
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -29,6 +29,7 @@ export default function Dashboard() {
     const [showProfileSettings, setShowProfileSettings] = useState(false);
     const [isTokenReady, setIsTokenReady] = useState(false);
     const [error, setError] = useState('');
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     const [stats, setStats] = useState({
         totalNotes: 0,
@@ -173,11 +174,59 @@ export default function Dashboard() {
                     <div className="flex justify-between items-center py-4">
                         {/* Logo and Mobile Menu */}
                         <div className="flex items-center space-x-4">
-                            <button className="lg:hidden p-2 rounded-xl bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 hover:scale-110">
+                            <button
+                                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                                className="lg:hidden p-2 rounded-xl bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                            >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
                             </button>
+
+                            {/* Mobile Dropdown Menu */}
+                            {showMobileMenu && (
+                                <div className="lg:hidden absolute top-16 left-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl z-50 min-w-48">
+                                    <div className="p-2 space-y-1">
+                                        <Link href="/dashboard">
+                                            <button
+                                                onClick={() => setShowMobileMenu(false)}
+                                                className="w-full flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                            >
+                                                <Icons.Analytics />
+                                                <span className="font-medium">Dashboard</span>
+                                            </button>
+                                        </Link>
+                                        <Link href="/notes">
+                                            <button
+                                                onClick={() => setShowMobileMenu(false)}
+                                                className="w-full flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                            >
+                                                <Icons.Notes />
+                                                <span className="font-medium">Notes</span>
+                                            </button>
+                                        </Link>
+                                        <Link href="/notes/shared-by-me">
+                                            <button
+                                                onClick={() => setShowMobileMenu(false)}
+                                                className="w-full flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                            >
+                                                <Icons.Share />
+                                                <span className="font-medium">Shared</span>
+                                            </button>
+                                        </Link>
+                                        <Link href="/tasks">
+                                            <button
+                                                onClick={() => setShowMobileMenu(false)}
+                                                className="w-full flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                                            >
+                                                <Icons.Tasks />
+                                                <span className="font-medium">Tasks</span>
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+
                             <div className="flex items-center space-x-3">
                                 <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/25">
                                     <Icons.Sparkles />

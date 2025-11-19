@@ -493,7 +493,7 @@ export default function NoteEditor({
     return (
         <div
             ref={editorRef}
-        className="bg-white dark:bg-gray-900 rounded-xl min-h-[70vh] relative
+            className="bg-white dark:bg-black rounded-xl min-h-[70vh] relative
                 bg-gradient-to-br from-white via-pink-50 to-purple-50 dark:from-gray-900 dark:via-pink-900/20 dark:to-purple-900/20
                 border-2 border-pink-200/50 dark:border-pink-500/20
                 shadow-[0_0_80px_-20px_rgba(236,72,153,0.4)] dark:shadow-[0_0_80px_-20px_rgba(236,72,153,0.3)]
@@ -542,7 +542,7 @@ export default function NoteEditor({
                                 <button
                                     key={key}
                                     onClick={onClick}
-                                    className={`flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r ${gradient} hover:${gradient.replace('500', '600')} text-white shadow-lg transition-all duration-200 ${icon ? 'p-2 hidden sm:flex' : 'font-bold text-sm'}`}
+                                    className={`flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-r ${gradient} hover:${gradient.replace('500', '600')} text-white shadow-lg transition-all duration-200 ${icon ? 'p-2 sm:flex' : 'font-bold text-sm'}`}
                                     title={label}
                                 >
                                     {icon ? (
